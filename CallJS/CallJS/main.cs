@@ -30,9 +30,10 @@ namespace CallJS
 //             t1.Start("hello");
             System.Threading.Timer timerThr;
             timerThr = new System.Threading.Timer(new TimerCallback(SetTB), null, Timeout.Infinite, 5000);
-            //listView1
+            dataGridView1.DataSource = m_pStockInfo;
         }
 
+ 
         public void SetTB(object value)
         {
             if (this.InvokeRequired)
