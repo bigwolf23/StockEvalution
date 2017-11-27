@@ -56,7 +56,7 @@ namespace CallJS
                 }
                 //从XML用反序列化的形式读出数据
                 XmlSerializer xs = new XmlSerializer(typeof(StockList));
-                Stream stream = new FileStream(@"G:\Project\My_Source\C_SHARP\CallJS\CallJS\StockList.xml",
+                Stream stream = new FileStream(@"..\..\StockList.xml",
                     FileMode.Open,
                     FileAccess.Read,
                     FileShare.Read);
@@ -86,7 +86,7 @@ namespace CallJS
                 //从XML用序列化的形式写入数据
                 XmlSerializer xs = new XmlSerializer(typeof(StockList));
                 //Stream stream = new FileStream(@"StockList.xml",
-                Stream stream = new FileStream(@"G:\Project\My_Source\C_SHARP\CallJS\CallJS\StockList.xml",
+                Stream stream = new FileStream(@"..\..\StockList.xml",
                     FileMode.Open,
                     FileAccess.Write,
                     FileShare.Read);

@@ -83,11 +83,12 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(29, 63);
+            this.listView1.Location = new System.Drawing.Point(12, 63);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(488, 356);
+            this.listView1.Size = new System.Drawing.Size(969, 356);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // main
             // 
