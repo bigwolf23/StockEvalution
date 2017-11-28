@@ -22,15 +22,25 @@ namespace CallJS
 
         public StockTemple m_pStockTemplate = new StockTemple();
         public List<StockInfo> m_pStockInfo = new List<StockInfo>();
+        private BindingList<StockInfo> BStockInfo;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             m_pStockTemplate.XMLDeserialize();
 //             Thread t1 = new Thread(new ParameterizedThreadStart(TestMethod));
 //             t1.Start("hello");
-            System.Threading.Timer timerThr;
-            timerThr = new System.Threading.Timer(new TimerCallback(SetTB), null, Timeout.Infinite, 5000);
-            dataGridView1.DataSource = m_pStockInfo;
+//             System.Threading.Timer timerThr;
+//             timerThr = new System.Threading.Timer(new TimerCallback(SetTB), null, Timeout.Infinite, 5000);
+            
+            if (m_pStockInfo != null)
+            {
+                m_pStockInfo.Clear();
+            }
+            getStockAllData(m_pStockTemplate);
+            //about databing
+            //https://www.cnblogs.com/CherishFX/archive/2013/01/05/2846034.html
+            BStockInfo = new BindingList<StockInfo>(m_pStockInfo);
+            dataGridView1.DataSource = BStockInfo;
         }
 
  
@@ -47,6 +57,11 @@ namespace CallJS
                     m_pStockInfo.Clear();
                 }
                 getStockAllData(m_pStockTemplate);
+                foreach (StockInfo pTempInfo in m_pStockInfo)
+                {
+                    dataGridView1.Rows.Add(pTempInfo);
+                }
+                
             }
         }
 
